@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exercise 4</title>
+</head>
+<body>
+	<h2>Pesos to Chinese Yuan</h2>
+	<p>Compute for Amount of Pesos to Chinese Yuan</p>
+	<form>
+		Enter Amount of Pesos: <input type="text" id="num1" size="6"><br>
+		<input type="submit" value="CALCULATE" onclick="Calculate()">
+		<input type="Reset" name="Cancel">
+	</form>
+	<script type="text/javascript">
+		function Calculate(){
+			let num1 = document.getElementById('num1').value;
+			let quotient = num1 / 8.05;
+			alert("The quotient of the two values is : " + quotient);
+		}
+	</script>
+</body>
+</html>
