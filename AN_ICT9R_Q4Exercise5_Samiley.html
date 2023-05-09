@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+	#figure1,#figure2{
+		width: 600px;
+	}
+	#figure3{
+		width: 250px;
+	}
+	img{
+		width: 150px;
+	}
+	h1,h2, h3{
+		font-family: Roboto Condensed;
+	}
+	p,td{
+		font-family: Roboto Condensed;
+		font-size: large;
+	}
+	form{
+		text-align: center;
+	}
+	body{
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAElBMVEUqengreXgne3gsenYteHgseHx2Ol1HAAAAcUlEQVR4nO3UsQ3AIAxFQRsn+68cPAFQRYnuCtfo64m4q0ZkZrBWo7eah7Xu6gpjbemu3n7Dd+hqn64O+NtPGAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfukBwZsARBgmspEAAAAASUVORK5CYII=);
+	}
+</style>
+	<title>Q4 Exercise 5</title>
+</head>
+<body>
+	<div class="container bg-white mt-5">
+	<h1 class="text-center">The Ohm's Law</h1>
+	<p id='date' class="text-center"></p><br>
+	<p>There is a mathematical relationship which links current, voltage and resistance. A German scientist named Georg Ohm performed many experiments in an effort to show a link between the three. In the days when he was performing his experiments there were no meters as we know them today. Even though, Georg Ohm knew there was a relationship between potential difference, current and the resistive properties of a material it was really difficult to ascertain what this was - even though it seems very obvious today. It took considerable effort for Ohm to make his first attempt at discovering the relationship, but this was soon proved wrong - the internal resistance of the batteries he used was probably the cause. Then, at his second attempt did he manage to devise what we know today as Ohm's Law.</p>
+	<center><img src="https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/dccircuits-dcp3.gif" id="figure3"><br>
+	<p>Ohm’s principal discovery was that the amount of electric current through a metal conductor in a circuit is directly proportional to the voltage impressed across it, for any given temperature. Ohm expressed his discovery in the form of a simple equation, describing how voltage, current, and resistance interrelate:</p>
+	<img src="https://www.allaboutcircuits.com/uploads/articles/current-flow-ohms-law.jpg" id="figure1"><br>
+	<p>In this first example, we will calculate the amount of current (I) in a circuit, given values of voltage (E) and resistance (R):</p>
+
+	<div class="row">
+		<div class="col-6">
+			<img src="https://www.allaboutcircuits.com/uploads/articles/current-flow-ER.jpg" id="figure2"><br>
+		</div>
+		<div class="col-6 mt-5">
+			Enter Voltage(E): <input type="text" name="V" class="form-control">
+			Enter Resistance(R): <input type="R" class="form-control">
+			<input type="Submit" name="Compute" class="btn btn-secondary" onclick="Calculate()">
+			<p id="Output"></p>
+		</div>
+	</div>
+	<h2>How light makes a light bulb light up?</h2>
+	<p>When a light bulb connects to an electrical power supply, an electrical current flows from one metal contact to the other. As the current travels through the wires and the filament, the filament heats up to the point where it begins to emit photons, which are small packets of visible light.</p>
+	<button class="btn btn-success" onmousedown="On()" onmouseout="Off()">TURN ON LIGHT</button>
+	<img src="turnoff.png" id="bulb"><br>
+	<audio id="audio1" src="turnonlights.mp3"></audio>
+
+
+	<script type="text/javascript">
+		function Calculate(){
+			let V = document.getElementById('V').value;
+			let R = document.getElementById('R').value;
+			let Current = V/R;
+			document.getElementById('Output').innerHTML = "The computed Current(I) is:" + Current;
+		}
+		function On(){
+			document.getElementById('bulb').src ="turnon.png";
+			document.getElementById('audio1').play();
+		}
+		function Off(){
+			document.getElementById('bulb').src ="turnoff.png";
+			document.getElementById('audio1').pause();
+		}
+	</script>
+	<script type="text/javascript">
+		 const DT = new Date();//constant declaration for date
+		 document.getElementById('date').innerHTML = DT;
+	</script>	
+
+
+
+
+SOURCES <br>
+<a href="https://www.electronics-notes.com/articles/basic_concepts/resistance/what-is-ohms-law-formula-equation.php">Understanding Ohm's Law</a><br>
+<a href="https://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/">Ohm's Law- How Voltage, Current and Resistance Relate.</a><br>
+
+	</div>
+</body>
+</html>
